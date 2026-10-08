@@ -1,0 +1,28 @@
+#!/bin/bash
+# Set how see-through the terminals are, per theme.
+#
+# A theme can hold a file named "terminal-opacity" with one number in
+# it (for example 0.60). Every other theme gets the usual 0.90.
+# Runs each time the theme changes (omarchy theme set).
+
+default_opacity=0.90
+theme_file="$HOME/.local/state/omarchy/current/theme/terminal-opacity"
+
+opacity=$default_opacity
+if [[ -f $theme_file ]]; then
+  wanted=$(tr -d '[:space:]' <"$theme_file")
+  # Only accept a plain number from 0 to 1.
+  [[ $wanted =~ ^(0(\.[0-9]+)?|1(\.0+)?)$ ]] && opacity=$wanted
+fi
+
+# Kitty reads this file through an "include" line in kitty.conf.
+if [[ -d $HOME/.config/kitty ]]; then
+  echo "background_opacity $opacity" >"$HOME/.config/kitty/theme-opacity.conf"
+  pgrep -x kitty >/dev/null && killall -SIGUSR1 kitty
+fi
+
+# foot has the level in foot.ini itself; new foot windows pick it up.
+foot_ini="$HOME/.config/foot/foot.ini"
+if [[ -f $foot_ini ]] && grep -q '^alpha=' "$foot_ini"; then
+  sed -i "s/^alpha=.*/alpha=$opacity/" "$foot_ini"
+fi

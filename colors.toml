@@ -1,0 +1,38 @@
+# Violet Tide — an Omarchy theme.
+# A purple dusk over the sea: dark slate-purple background, soft
+# grey-white text, a pink-to-lavender window border, and muted cyan,
+# green, orange and red for terminal text.
+
+mode = "dark"
+
+accent = "#e8a6f5"
+selection = "#4a4263"
+muted = "#625c78"
+
+background = "#1b1a24"
+dark_background = "#15141c"
+darker_background = "#100f16"
+lighter_background = "#2a2836"
+
+foreground = "#d6d2dc"
+dark_foreground = "#7d7890"
+light_foreground = "#bbb2c3"
+bright_foreground = "#ece8f2"
+
+hyprland_active_border = "rgba(f590f8ee) rgba(ddcdfcee) 45deg"
+
+red = "#d4606e"
+yellow = "#d9c27e"
+orange = "#e0a070"
+green = "#9db87a"
+cyan = "#7fb4c6"
+blue = "#8aa4dc"
+magenta = "#c79be0"
+brown = "#988680"
+
+bright_red = "#e88592"
+bright_yellow = "#ead9a0"
+bright_green = "#b9d19a"
+bright_cyan = "#a3cfdc"
+bright_blue = "#aebff0"
+bright_magenta = "#e8a6f5"

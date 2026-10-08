@@ -1,0 +1,30 @@
+-- Violet Tide: pink-to-lavender active border, square corners, and
+-- the wallpaper blurred behind see-through windows.
+local active_border_color = { colors = { "rgba(f590f8ee)", "rgba(ddcdfcee)" }, angle = 45 }
+local inactive_border_color = "rgba(595959aa)"
+
+hl.config({
+  general = {
+    col = {
+      active_border = active_border_color,
+      inactive_border = inactive_border_color,
+    },
+  },
+
+  decoration = {
+    rounding = 0,
+
+    blur = {
+      enabled = true,
+      size = 6,
+      passes = 3,
+    },
+  },
+
+  group = {
+    col = {
+      border_active = active_border_color,
+      border_inactive = inactive_border_color,
+    },
+  },
+})
