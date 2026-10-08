@@ -5,6 +5,8 @@ slate-purple background, soft grey-white text, a pink-to-lavender window
 border, and see-through terminals with the wallpaper blurred behind
 them.
 
+![Violet Tide — btop, Yazi and LazyVim tiled, with the wallpaper blurred behind them](screenshot.webp)
+
 ![Violet Tide — fastfetch in a see-through Kitty window on the default wallpaper](screenshot-fastfetch.webp)
 
 ![Violet Tide — the bar over the default purple and blue sunset wallpaper](screenshot-desktop.webp)
