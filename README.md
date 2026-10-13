@@ -53,12 +53,15 @@ hl.config({
 })
 ```
 
-The theme's own `hyprland.lua` holds the same setting, and it is used
-as-is if you keep the theme as your own folder or a link to your own
-copy instead of a clone:
+The theme's `hyprland.lua.example` holds the same setting, plus the
+pink-to-lavender border and square corners. Omarchy ignores it under
+that name. If you keep the theme as your own folder or a link to your
+own copy instead of a clone, copy it to `hyprland.lua` and Omarchy
+uses it as-is:
 
 ```bash
 git clone https://github.com/ggregoro/violet-tide ~/Projects/violet-tide
+cp ~/Projects/violet-tide/hyprland.lua.example ~/Projects/violet-tide/hyprland.lua
 ln -s ~/Projects/violet-tide ~/.config/omarchy/themes/violet-tide
 omarchy theme set "Violet Tide"
 ```
@@ -100,5 +103,5 @@ used under the Unsplash License and cropped to 16:9:
 - Pink and purple sunset over the ocean waves, by Vishnu K R
 
 Swap `backgrounds/` for your own if you prefer. Theme files
-(`colors.toml`, `hyprland.lua`, `icons.theme`, `terminal-opacity`,
+(`colors.toml`, `hyprland.lua.example`, `icons.theme`, `terminal-opacity`,
 `extras/`, this README) are MIT-licensed — see `LICENSE`.
