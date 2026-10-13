@@ -48,7 +48,7 @@ not take either from a theme installed with `omarchy theme install`
 ```lua
 hl.config({
   decoration = {
-    blur = { enabled = true, size = 6, passes = 3 },
+    blur = { enabled = true, size = 6, passes = 3, brightness = 0.6 },
   },
 })
 ```
