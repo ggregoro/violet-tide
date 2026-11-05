@@ -53,44 +53,31 @@ hl.config({
 })
 ```
 
-The theme's `hyprland.lua.example` holds the same setting, plus the
-pink-to-lavender border and square corners. Omarchy ignores it under
-that name. If you keep the theme as your own folder or a link to your
-own copy instead of a clone, copy it to `hyprland.lua` and Omarchy
-uses it as-is:
+For the pink-to-lavender active border and square corners, add this
+to the same file:
 
-```bash
-git clone https://github.com/ggregoro/violet-tide ~/Projects/violet-tide
-cp ~/Projects/violet-tide/hyprland.lua.example ~/Projects/violet-tide/hyprland.lua
-ln -s ~/Projects/violet-tide ~/.config/omarchy/themes/violet-tide
-omarchy theme set "Violet Tide"
+```lua
+hl.config({
+  general = {
+    col = {
+      active_border = { colors = { "rgba(f590f8ee)", "rgba(ddcdfcee)" }, angle = 45 },
+      inactive_border = "rgba(595959aa)",
+    },
+  },
+  decoration = { rounding = 0 },
+})
 ```
 
-**2. Terminal opacity.** `terminal-opacity` holds the level this theme
-wants (`0.60`). `extras/terminal-opacity` is a small hook that applies
-it to Kitty and foot each time the theme changes, and puts every other
-theme back to `0.90`:
-
-```bash
-omarchy hook install theme-set extras/terminal-opacity
-```
-
-Then, in `~/.config/kitty/kitty.conf`, replace any `background_opacity`
-line with:
-
-```
-include theme-opacity.conf
-```
-
-For foot the hook rewrites the `alpha=` line in
-`~/.config/foot/foot.ini`, if there is one. Re-apply the theme once and
-the level is set.
+**2. Terminal opacity.** This theme is meant to be used with Kitty and
+foot at `0.60` opacity (the number in `terminal-opacity`). Set
+`background_opacity 0.60` in `~/.config/kitty/kitty.conf`, or
+`alpha=0.60` under `[colors]` in `~/.config/foot/foot.ini`.
 
 ## Tweaking
 
 Edit `colors.toml`, then re-run `omarchy theme set "Violet Tide"`.
-Terminal colors, the bar, btop and Neovim regenerate from it. Change the
-number in `terminal-opacity` for more or less see-through.
+Terminal colors, the bar, btop and Neovim regenerate from it. Lower the
+terminal opacity for more see-through, raise it for less.
 
 ## Credits & licensing
 
@@ -103,5 +90,4 @@ used under the Unsplash License and cropped to 16:9:
 - Pink and purple sunset over the ocean waves, by Vishnu K R
 
 Swap `backgrounds/` for your own if you prefer. Theme files
-(`colors.toml`, `hyprland.lua.example`, `icons.theme`, `terminal-opacity`,
-`extras/`, this README) are MIT-licensed — see `LICENSE`.
+(`colors.toml`, `icons.theme`, `terminal-opacity`, this README) are MIT-licensed — see `LICENSE`.
